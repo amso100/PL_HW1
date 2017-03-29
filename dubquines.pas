@@ -1,0 +1,48 @@
+Program Dolly;
+	const
+	prelines = 8;
+	numlines = 24;
+	var
+	myself : array [1..numlines] of string[100];
+	i, j, x : integer;
+begin
+	myself[ 1 ] := 'Program Dolly;' ;
+	myself[ 2 ] := '	const' ;
+	myself[ 3 ] := '	prelines = 8;' ;
+	myself[ 4 ] := '	numlines = 24;' ;
+	myself[ 5 ] := '	var' ;
+	myself[ 6 ] := '	myself : array [1..numlines] of string[100];' ;
+	myself[ 7 ] := '	i, j, x : integer;' ;
+	myself[ 8 ] := 'begin' ;
+	myself[ 9 ] := '	for x :=  1   to 2	do' ;
+	myself[ 10 ] := '	begin' ;
+	myself[ 11 ] := '		for i :=  1 to prelines do writeln(myself[i]);' ;
+	myself[ 12 ] := '		for i :=  1 to numlines do' ;
+	myself[ 13 ] := '		begin' ;
+	myself[ 14 ] := '			write( ''	myself[ '' , i: 1  ,  '' ] := '''''' );' ;
+	myself[ 15 ] := '			for j :=  1 to length(myself[i]) do' ;
+	myself[ 16 ] := '			begin' ;
+	myself[ 17 ] := '				if myself[i,j] =  ''''''''  then write( '''''''' );' ;
+	myself[ 18 ] := '				write(myself[i,j]);' ;
+	myself[ 19 ] := '			end;' ;
+	myself[ 20 ] := '			writeln('''''' ;'');' ;
+	myself[ 21 ] := '		end;' ;
+	myself[ 22 ] := '		for i := prelines+1 to numlines do writeln(myself[i]);' ;
+	myself[ 23 ] := '	end;' ;
+	myself[ 24 ] := 'end.' ;
+	for x :=  1   to 2	do
+	begin
+		for i :=  1 to prelines do writeln(myself[i]);
+		for i :=  1 to numlines do
+		begin
+			write( '	myself[ ' , i: 1  ,  ' ] := ''' );
+			for j :=  1 to length(myself[i]) do
+			begin
+				if myself[i,j] =  ''''  then write( '''' );
+				write(myself[i,j]);
+			end;
+			writeln(''' ;');
+		end;
+		for i := prelines+1 to numlines do writeln(myself[i]);
+	end;
+end.

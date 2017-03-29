@@ -1,0 +1,35 @@
+1.	1. int is atomic, because it cannot be broken into other types
+	in the syntax. It is first-class, because it supports operations 
+	the same as "all other" types.
+
+	2. int* is not atomic, as it is a compound of the type "int" with the
+	constructor "*". Whether it is first-class or not, depends on its use.
+	If int* is used as an iterator over an array, then it is first-class.
+	However if int* is the pointer to the beggining of an array, then to
+	correctly use it we cannot simply assign values to it, and need to use
+	"free" when ending the use of it. Thus whether int* is first-class
+	or not depends on its use.
+
+	3. void is not atomic, as it is not possible to create variables of
+	that type, pass it to functions, and even functions that "return void"
+	don't actually return anything.
+
+	4. struct with 2 int is not atomic, by definition it is a compound of
+	2 smaller atomic types. It is not first class, because it needs
+	specific functions and header to be used by other functions.
+
+	5. A string (when made up of a series of chars) is not atomic, as by
+	the given definition it is made up of a series of characters, ending
+	with '\0'. It is not first-class because a different sset of functions
+	is needed to handle string operations than other types such as int.
+
+	6. The types created when defining an enum ARE atomic. Although under
+	the surface the types arre represented as numbers (enumerated), on
+	the top level an enum is just a new type, that cannot be separated
+	into atomic parts. The types in the enum are first-class, because all
+	functions in the language done to an int or char can also be done
+	with the enumerated types.
+
+	7. A function from int to int is atomic, because as a function itself,
+	it cannot be separated into smaller types that are atomic. It is not
+	first-class, because it cannot (in C) be assigned a value for example.
