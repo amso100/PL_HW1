@@ -33,3 +33,34 @@
 	7. A function from int to int is atomic, because as a function itself,
 	it cannot be separated into smaller types that are atomic. It is not
 	first-class, because it cannot (in C) be assigned a value for example.
+
+2.	1. "int" in ML is atomic, and first class, as it is one of the basic types.
+	
+	2. "int*int" (a tuple of 2 integers) is not atomic, because by definition,
+	it is a pair of 2 ints. It is first-class, because just like ints and bools,
+	it can be sent to and returned from functions.
+
+	3. In ML strings are considered atomic, because although they are made up of
+	many characters, they cannot be split into single characters unlike "strings"
+	in C, C++, Python. They are first-class, as they can be sent to functions, 
+	returned from functions, have basic operations performed on them...
+
+	4. "bool" is an atomic type in ML, as it cannot be divided into smaller types.
+	"bool" is also a first-class object, just like "int" and "real".
+
+	5. A function int->int is an atomic type, as it cannot be split to smaller atomic
+	types. Unlike many other languages, in ML functions ARE first-class objects, as
+	they behave the same way when sent to functions or returned as regular variables.
+
+3.	The main difference between BNF and EBNF is the list of symbols that can be used
+	to describe the grammar of the given programming language. While BNF is rather
+	basic, EBNF adds the symbols needed to be able to represent the grammar as 
+	regular expressions, allowing for a much more readable and universal description.
+
+4.	a. The mini-Java EBNF is written as such:
+	Declaration Rules: ^[A-Za-z]+\t* *=\t* *[A-za-z\", \{\}\(\)\[\];]+;
+	Definitios of types/expressions/statements:
+	Definition:  ^[A-Za-z]+ = [\",A-za-z\{\} \(\)&|<>+-\[\]*]+\n
+	Lines after: ^\t*(\||;);*\t*[\"A-Za-z,\(\)\[\] \.\{\};\!]*
+
+
