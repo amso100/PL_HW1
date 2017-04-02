@@ -1,0 +1,16 @@
+class MainProg {
+	public static void main(String[] arg) {
+		System.out.println(true);
+	}
+}
+
+
+                                               Goal
+       MainClass                                                                                        EOF
+"class"  Identifier "{" "public" "static" "void" "main" "(" "String" "[" "]" Identifier ")" "{" Statement "}" "}"
+             |                                                                   |                 |
+      l l l l l l l l                                                         l l l l              |
+      M a i n P r o g                                                         a r g s              |
+                                                                           System.out.println "(" Expression ")" ";"
+                                                                                                   |
+                                                                                                  true

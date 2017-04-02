@@ -57,10 +57,29 @@
 	basic, EBNF adds the symbols needed to be able to represent the grammar as 
 	regular expressions, allowing for a much more readable and universal description.
 
-4.	a. The mini-Java EBNF is written as such:
+4.	a.
+	b. See document miniJava_prog
+	c. According to the EBNF for mini-Java, code blocks are separated by {}, and
+	every statement that is not "if" or "while" ends in ";", so every valid command
+	looks to end in ";" and that does not depend on whether that is the only command
+	in the block or not. Therefore mini-Java is a terminist language.
+	d. The mini-Java EBNF is written as such:
 	Declaration Rules: ^[A-Za-z]+\t* *=\t* *[A-za-z\", \{\}\(\)\[\];]+;
 	Definitios of types/expressions/statements:
 	Definition:  ^[A-Za-z]+ = [\",A-za-z\{\} \(\)&|<>+-\[\]*]+\n
 	Lines after: ^\t*(\||;);*\t*[\"A-Za-z,\(\)\[\] \.\{\};\!]*
 
+5.	a. Pascal language was first implemented on the CDC-6000 series. Although it was
+	described in an article "Pascal: The Wirthwhile Language" as "making no assumptions
+	about the nature of the host machine" and that "many of the features that C users
+	depend...are not present, since you simply do not know how data has been represented
+	within the machine". However, it should be noted that in the same article it is said
+	that "Because Pascal is not a huge language, it is close to the machine."
+	However, in another place Birger Nielson says about the design of Pascal-S "It is 
+	a bit funny to see how maany CDC-Pascal specialties are built into this compiler/interpreter".
+	So in total, it seems that although the main purpose of Pascal is to be machine-independent, 
+	inevitably it did incorporate some features for the machine it was used. However that does not
+	change the fact that Pascal is still machine-independent, even if some features were added for the
+	computer it was initially designed for.
 
+	b. See document pascal_keywords
