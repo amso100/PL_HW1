@@ -4,7 +4,7 @@ fun AuxPalindrome(str:string, n:int) : bool =
 		if String.sub(str, n)=String.sub(str, size(str)-n-1) then AuxPalindrome(str, n+1)
 		else false;
 
-fun IsPalindrome(str:string) : bool =
+fun isPalindrome(str:string) : bool =
 	AuxPalindrome(str, 0);
 
 IsPalindrome("");
